@@ -1,0 +1,117 @@
+---
+// Navigation component with responsive design
+---
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="logo-link" aria-label="Bikefriendly Chicago - Home">
+      <img 
+        src="/images/logo.jpg" 
+        alt="Bikefriendly" 
+        class="logo"
+        width="180"
+        height="60"
+      />
+    </a>
+    
+    <div class="nav-links desktop-menu">
+      <a href="/" class="nav-link">Map</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="/faq" class="nav-link">FAQ</a>
+      <a href="/sponsorship" class="nav-link">Sponsor</a>
+    </div>
+    
+    <button class="mobile-menu-toggle mobile-menu" aria-label="Toggle menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem var(--mobile-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #1e40af;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #1d4ed8;
+    border-bottom-color: #1d4ed8;
+  }
+  
+  .mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+  }
+  
+  .hamburger {
+    width: 24px;
+    height: 2px;
+    background: #1e40af;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile responsive */
+  @media (min-width: 768px) {
+    .nav-container {
+      padding: 1rem var(--desktop-padding);
+    }
+    
+    .logo {
+      height: 48px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .logo {
+      height: 56px;
+    }
+  }
+</style>

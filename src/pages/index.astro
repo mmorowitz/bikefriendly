@@ -1,16 +1,103 @@
 ---
-
+import Layout from '../components/Layout.astro';
+import Navigation from '../components/Navigation.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Bikefriendly Chicago - Find Bike-Friendly Businesses">
+  <Navigation />
+  
+  <main class="container">
+    <section class="hero">
+      <h1>Find Bike-Friendly Businesses in Chicago</h1>
+      <p class="hero-subtitle">
+        Discover restaurants, shops, and services that welcome cyclists with 
+        bike parking, repair stations, and cyclist-friendly amenities.
+      </p>
+    </section>
+    
+    <section class="map-section">
+      <div class="map-container">
+        <!-- Map component will go here -->
+        <div class="map-placeholder">
+          <p>Interactive map loading...</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="business-list-section">
+      <h2>Business Directory</h2>
+      <div class="business-list-container">
+        <!-- Business list component will go here -->
+        <div class="business-list-placeholder">
+          <p>Business list loading...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .map-section {
+    margin-bottom: 3rem;
+  }
+  
+  .map-placeholder,
+  .business-list-placeholder {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 1.125rem;
+  }
+  
+  .business-list-section h2 {
+    color: #1e40af;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .business-list-container {
+    margin-bottom: 2rem;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 0;
+    }
+    
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+  }
+</style>
