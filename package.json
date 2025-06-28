@@ -1,0 +1,33 @@
+{
+  "name": "bikefriendly-frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "jest --config config/jest.config.js",
+    "test:watch": "jest --config config/jest.config.js --watch",
+    "test:integration": "jest --config config/jest.config.js --testPathPattern=integration",
+    "lint": "eslint --config config/.eslintrc.js src/",
+    "format": "prettier --config config/.prettierrc.js --write src/",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.10.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "@jest/globals": "^30.0.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "babel-jest": "^30.0.2",
+    "eslint": "^9.30.0",
+    "jest": "^30.0.3",
+    "jest-environment-jsdom": "^30.0.2",
+    "leaflet": "^1.9.4",
+    "prettier": "^3.6.2",
+    "puppeteer": "^24.11.1"
+  }
+}

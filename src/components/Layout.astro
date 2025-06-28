@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Chicago Bike-Friendly Businesses', description = 'Find bicycle-friendly businesses in Chicago' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Responsive images preload -->
+    <link rel="preload" as="image" href="/images/bike-icon-mobile.svg" media="(max-width: 768px)" />
+    <link rel="preload" as="image" href="/images/bike-icon-desktop.svg" media="(min-width: 769px)" />
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
