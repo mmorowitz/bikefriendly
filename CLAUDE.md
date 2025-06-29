@@ -54,6 +54,10 @@ CSS: Custom CSS with modern features
 - **Resilience**: Works without JavaScript for core content
 - **Mobile-optimized**: Minimal JavaScript bundle
 
+### Dev Procedure
+- Before running end to end integration tests:
+    - Ensure that the local database and API backend project are running
+
 ### Test-Driven Development
 1. Write failing tests first
 2. Implement minimal code to pass tests
