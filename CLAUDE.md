@@ -17,7 +17,8 @@ Static-first frontend for displaying bicycle-friendly businesses in Chicago usin
 ## Core Features
 
 ### Map View (Interactive Island)
-- Interactive map centered on Chicago
+- Interactive map centered on Chicago default viewport
+- Viewport-based lazy loading for adjacent areas
 - Color-coded pins by business category
 - Clickable pins showing business details
 - Responsive design for mobile/desktop
@@ -94,11 +95,12 @@ src/
 
 ## API Integration
 
-### Build-Time Data Fetching (Static)
-- Fetch businesses during Astro build process
-- Pre-render HTML with business data
-- No loading states for initial content
-
+### Data Loading Strategy
+- **Build-time**: Default Chicago viewport (~100-200 businesses)
+- **Runtime**: Adjacent areas loaded as user explores map
+- **Caching**: Client-side area caching prevents duplicate API calls
+- **Benefits**: 20-50KB initial payload vs 200KB+ full dataset
+- See `docs/viewport-loading-strategy.md` for detailed implementation
 ### Client-Side API (Islands)
 - `GET /api/businesses` - For filtering/searching
 - `GET /api/businesses/:id` - For detailed business views
@@ -129,6 +131,8 @@ const initialBusinesses = await fetch(`${API_BASE}/businesses`).then(r => r.json
 6. **Business List Island** - Filtering and search with mobile UX
 7. **Mobile Optimizations** - Touch gestures, PWA features
 8. **Performance** - Optimize island loading and bundle size per device
+
+
 
 ## Testing Strategy
 
