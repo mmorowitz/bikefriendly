@@ -3,32 +3,37 @@ import Layout from '../components/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 ---
 
-<Layout title="Bikefriendly Chicago - Find Bike-Friendly Businesses">
+<Layout 
+  title="Bikefriendly Chicago"
+  description="Find bicycle-friendly businesses in Chicago with bike parking, repair stations, and cyclist-friendly amenities. Discover restaurants, shops, and services that welcome cyclists."
+  keywords="bike friendly, Chicago, cycling, bicycle parking, bike repair, cyclist amenities, bike shops, Chicago cycling"
+>
   <Navigation />
   
-  <main class="container">
-    <section class="hero">
-      <h1>Find Bike-Friendly Businesses in Chicago</h1>
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="main-heading">
+      <h1 id="main-heading">Find Bike-Friendly Businesses in Chicago</h1>
       <p class="hero-subtitle">
         Discover restaurants, shops, and services that welcome cyclists with 
         bike parking, repair stations, and cyclist-friendly amenities.
       </p>
     </section>
     
-    <section class="map-section">
-      <div class="map-container">
+    <section class="map-section" aria-labelledby="map-heading">
+      <h2 id="map-heading" class="sr-only">Interactive Map</h2>
+      <div class="map-container" role="application" aria-label="Interactive map of bike-friendly businesses">
         <!-- Map component will go here -->
-        <div class="map-placeholder">
+        <div class="map-placeholder" aria-live="polite">
           <p>Interactive map loading...</p>
         </div>
       </div>
     </section>
     
-    <section class="business-list-section">
-      <h2>Business Directory</h2>
-      <div class="business-list-container">
+    <section class="business-list-section" aria-labelledby="directory-heading">
+      <h2 id="directory-heading">Business Directory</h2>
+      <div class="business-list-container" role="region" aria-label="List of bike-friendly businesses">
         <!-- Business list component will go here -->
-        <div class="business-list-placeholder">
+        <div class="business-list-placeholder" aria-live="polite">
           <p>Business list loading...</p>
         </div>
       </div>
@@ -86,6 +91,19 @@ import Navigation from '../components/Navigation.astro';
     margin-bottom: 2rem;
   }
   
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   /* Mobile responsive */
   @media (max-width: 768px) {
     .hero {

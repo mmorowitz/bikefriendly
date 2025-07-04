@@ -1,0 +1,298 @@
+---
+import Layout from '../components/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout 
+  title="Frequently Asked Questions"
+  description="Common questions about bike-friendly businesses in Chicago. Learn about our criteria, how to get listed, and what amenities make businesses cyclist-friendly."
+  keywords="FAQ, bike friendly criteria, Chicago cycling, business listing, bike amenities, cyclist services"
+>
+  <Navigation />
+  
+  <main class="container">
+    <section class="faq-hero">
+      <h1>Frequently Asked Questions</h1>
+      <p class="faq-subtitle">
+        Everything you need to know about bike-friendly businesses in Chicago.
+      </p>
+    </section>
+    
+    <div class="faq-content">
+      <section class="faq-section">
+        <h2>About Bike-Friendly Businesses</h2>
+        
+        <div class="faq-item">
+          <h3>What makes a business "bike-friendly"?</h3>
+          <p>A bike-friendly business actively welcomes cyclists by providing amenities and services that make it easy and safe to visit by bicycle. This includes secure bike parking, basic repair tools, cyclist-friendly policies, and sometimes additional perks like showers or water refill stations.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What specific amenities do you look for?</h3>
+          <ul>
+            <li><strong>Secure bike parking:</strong> Bike racks, lockable storage, or attended parking</li>
+            <li><strong>Basic repair tools:</strong> Pump, basic tools, or full repair station</li>
+            <li><strong>Easy access:</strong> Ground-level access without stairs or barriers</li>
+            <li><strong>Cyclist-friendly policies:</strong> Welcoming attitude, flexible dress codes</li>
+            <li><strong>Additional amenities:</strong> Showers, changing rooms, water refills, bike storage assistance</li>
+          </ul>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do businesses need all these amenities to be listed?</h3>
+          <p>No! Even basic bike parking can qualify a business for listing. We believe every effort to welcome cyclists matters, and we want to recognize businesses at all levels of bike-friendliness.</p>
+        </div>
+      </section>
+      
+      <section class="faq-section">
+        <h2>Getting Listed</h2>
+        
+        <div class="faq-item">
+          <h3>How can my business get listed?</h3>
+          <p>Contact us through our <a href="/contact">contact form</a> with details about your bike-friendly amenities. We'll review your submission and add qualified businesses to our directory within 1-2 weeks.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Is there a cost to be listed?</h3>
+          <p>Basic listings are completely free. We also offer <a href="/sponsorship">sponsorship opportunities</a> for businesses that want enhanced visibility and additional promotional benefits.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can I recommend a business I'm not affiliated with?</h3>
+          <p>Absolutely! We encourage cyclists to recommend their favorite bike-friendly spots. Use our contact form and include as much detail as possible about the amenities and your experience.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What information do you need for a listing?</h3>
+          <ul>
+            <li>Business name and address</li>
+            <li>Contact information (phone, website, social media)</li>
+            <li>Hours of operation</li>
+            <li>Detailed description of bike-friendly amenities</li>
+            <li>Photos of bike parking/amenities (helpful but not required)</li>
+            <li>Any special policies or services for cyclists</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section class="faq-section">
+        <h2>Using the Directory</h2>
+        
+        <div class="faq-item">
+          <h3>How do I find businesses near me?</h3>
+          <p>Use our interactive map to explore businesses by location, or browse the business directory. You can filter by business type, specific amenities, or neighborhood.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>How often is the directory updated?</h3>
+          <p>We update the directory continuously as new businesses are added or existing information changes. Business owners can contact us anytime to update their listing information.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What should I do if information is incorrect?</h3>
+          <p>Please <a href="/contact">contact us</a> immediately with the correct information. We want our directory to be as accurate and helpful as possible.</p>
+        </div>
+      </section>
+      
+      <section class="faq-section">
+        <h2>General Questions</h2>
+        
+        <div class="faq-item">
+          <h3>Who runs Bikefriendly Chicago?</h3>
+          <p>Bikefriendly Chicago is a community-driven initiative dedicated to promoting cycling in Chicago by highlighting businesses that welcome and support cyclists.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>How can I support this initiative?</h3>
+          <p>Support listed businesses, recommend new ones, share our directory with fellow cyclists, and consider <a href="/sponsorship">sponsorship</a> if you're a business owner. Every bit of community support helps us grow.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you cover areas outside Chicago?</h3>
+          <p>Currently, we focus exclusively on Chicago and its immediate surrounding areas. However, we may expand to other cities in the future based on community interest and demand.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can I use your data for my own project?</h3>
+          <p>We're open to data sharing for non-commercial, cycling-advocacy purposes. Please <a href="/contact">contact us</a> to discuss your specific needs and use case.</p>
+        </div>
+      </section>
+    </div>
+    
+    <section class="faq-cta">
+      <h2>Still Have Questions?</h2>
+      <p>Can't find what you're looking for? We're here to help!</p>
+      <a href="/contact" class="cta-button">Contact Us</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .faq-hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+    margin-bottom: 3rem;
+  }
+  
+  .faq-hero h1 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .faq-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .faq-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  .faq-section {
+    margin-bottom: 3rem;
+  }
+  
+  .faq-section h2 {
+    color: #1e40af;
+    font-size: 1.875rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .faq-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    border-left: 4px solid #3b82f6;
+  }
+  
+  .faq-item h3 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  .faq-item p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .faq-item ul {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+  
+  .faq-item li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .faq-item li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .faq-item strong {
+    color: #1f2937;
+    font-weight: 600;
+  }
+  
+  .faq-item a {
+    color: #3b82f6;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .faq-item a:hover {
+    color: #1d4ed8;
+  }
+  
+  .faq-cta {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.05));
+    border-radius: 0.5rem;
+  }
+  
+  .faq-cta h2 {
+    color: #1e40af;
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-cta p {
+    color: #64748b;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: #1e40af;
+    color: white;
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    min-height: 44px;
+    line-height: 1.4;
+  }
+  
+  .cta-button:hover {
+    background: #1d4ed8;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .faq-hero {
+      padding: 2rem 0;
+    }
+    
+    .faq-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .faq-subtitle {
+      font-size: 1.125rem;
+    }
+    
+    .faq-content {
+      padding: 0 1rem;
+    }
+    
+    .faq-item {
+      padding: 1.25rem;
+    }
+    
+    .faq-section h2 {
+      font-size: 1.5rem;
+    }
+    
+    .faq-item h3 {
+      font-size: 1.125rem;
+    }
+    
+    .faq-cta {
+      padding: 2rem 1rem;
+    }
+    
+    .faq-cta h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

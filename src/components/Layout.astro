@@ -2,29 +2,105 @@
 export interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  pageType?: 'website' | 'article';
 }
 
-const { title = 'Chicago Bike-Friendly Businesses', description = 'Find bicycle-friendly businesses in Chicago' } = Astro.props;
+const { 
+  title = 'Chicago Bike-Friendly Businesses', 
+  description = 'Find bicycle-friendly businesses in Chicago with bike parking, repair stations, and cyclist-friendly amenities',
+  keywords = 'bike friendly, Chicago, cycling, bicycle parking, bike repair, cyclist amenities',
+  ogImage = '/images/logo.jpg',
+  canonicalUrl = Astro.url.href,
+  pageType = 'website'
+} = Astro.props;
+
+const siteTitle = 'Bikefriendly Chicago';
+const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta name="theme-color" content="#1e40af" />
+    
+    <!-- SEO Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Bikefriendly Chicago" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url).href} />
+    <meta property="og:image:alt" content="Bikefriendly Chicago Logo" />
+    <meta property="og:site_name" content="Bikefriendly Chicago" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.url).href} />
+    <meta name="twitter:image:alt" content="Bikefriendly Chicago Logo" />
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
     <link rel="apple-touch-icon" href="/images/logo.jpg" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/logo.jpg" />
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/logo.jpg" />
     
     <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json" />
     
-    <!-- Logo preload -->
+    <!-- Preload critical resources -->
     <link rel="preload" as="image" href="/images/logo.jpg" />
+    <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
-    <title>{title}</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bikefriendly Chicago",
+        "description": "Directory of bicycle-friendly businesses in Chicago",
+        "url": "https://bikefriendly.chicago",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bikefriendly.chicago/images/logo.jpg"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        },
+        "knowsAbout": [
+          "Bicycle parking",
+          "Bike repair stations",
+          "Cyclist-friendly amenities",
+          "Chicago cycling"
+        ]
+      }
+    </script>
   </head>
   <body>
     <slot />

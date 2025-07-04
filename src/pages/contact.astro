@@ -1,0 +1,258 @@
+---
+import Layout from '../components/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout 
+  title="Contact Us"
+  description="Get in touch with Bikefriendly Chicago. Submit business recommendations, report issues, or learn how to get your business listed as bike-friendly."
+  keywords="contact, bike friendly business, Chicago cycling, business recommendations, bike amenities"
+>
+  <Navigation />
+  
+  <main class="container">
+    <section class="contact-hero">
+      <h1>Contact Bikefriendly Chicago</h1>
+      <p class="contact-subtitle">
+        Help us build a more bike-friendly Chicago by sharing your recommendations 
+        and feedback.
+      </p>
+    </section>
+    
+    <div class="contact-content">
+      <section class="contact-form-section">
+        <h2>Get in Touch</h2>
+        
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a topic...</option>
+              <option value="business-recommendation">Recommend a Bike-Friendly Business</option>
+              <option value="business-listing">List My Business</option>
+              <option value="report-issue">Report an Issue</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="business-name">Business Name (if applicable)</label>
+            <input type="text" id="business-name" name="business-name" />
+          </div>
+          
+          <div class="form-group">
+            <label for="business-address">Business Address (if applicable)</label>
+            <input type="text" id="business-address" name="business-address" placeholder="Street address, Chicago, IL" />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" required 
+              placeholder="Tell us about the bike-friendly amenities, your experience, or what you'd like to see improved..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+      
+      <aside class="contact-info">
+        <h3>What Makes a Business Bike-Friendly?</h3>
+        <ul class="amenities-list">
+          <li>=² Secure bike parking or racks</li>
+          <li>=' Basic bike repair tools or stations</li>
+          <li>=¿ Changing rooms or showers</li>
+          <li>=§ Water refill stations</li>
+          <li>=á Bike storage assistance</li>
+          <li><¯ Cyclist-friendly policies</li>
+          <li>=Í Easy bike access (no stairs)</li>
+        </ul>
+        
+        <h3>Response Time</h3>
+        <p>We typically respond to inquiries within 2-3 business days. For urgent matters, please include "URGENT" in your subject line.</p>
+        
+        <h3>Privacy</h3>
+        <p>Your contact information will only be used to respond to your inquiry and will not be shared with third parties.</p>
+      </aside>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .contact-hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+    margin-bottom: 3rem;
+  }
+  
+  .contact-hero h1 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-form-section h2 {
+    color: #1e40af;
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-form {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .submit-btn {
+    background: #1e40af;
+    color: white;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-height: 44px;
+  }
+  
+  .submit-btn:hover {
+    background: #1d4ed8;
+  }
+  
+  .submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  .contact-info {
+    background: #f1f5f9;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    height: fit-content;
+  }
+  
+  .contact-info h3 {
+    color: #1e40af;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  .contact-info h3:not(:first-child) {
+    margin-top: 2rem;
+  }
+  
+  .amenities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  
+  .amenities-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+  }
+  
+  .amenities-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .contact-info p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .contact-hero {
+      padding: 2rem 0;
+    }
+    
+    .contact-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .contact-subtitle {
+      font-size: 1.125rem;
+    }
+    
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .contact-form {
+      padding: 1.5rem;
+    }
+    
+    .contact-info {
+      padding: 1.5rem;
+    }
+  }
+</style>
