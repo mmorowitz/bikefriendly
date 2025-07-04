@@ -50,3 +50,8 @@ temp/
 
 # Project management files
 todo.md
+docs/PLAN.md
+docs/TASKS.md
+
+# Visual testing screenshots
+tests/screenshots/

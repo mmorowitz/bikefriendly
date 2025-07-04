@@ -10,6 +10,10 @@
     "test": "jest --config config/jest.config.js",
     "test:watch": "jest --config config/jest.config.js --watch",
     "test:integration": "jest --config config/jest.config.js --testPathPattern=integration",
+    "test:visual": "jest --config config/jest.config.js --testPathPattern=visual",
+    "visual": "node scripts/visual-test.js --port=3001",
+    "visual:quick": "node scripts/visual-test.js --quick --port=3001",
+    "visual:responsive": "node scripts/visual-test.js --responsive --port=3001",
     "lint": "eslint --config config/.eslintrc.js src/",
     "format": "prettier --config config/.prettierrc.js --write src/",
     "astro": "astro"
