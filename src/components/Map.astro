@@ -1,0 +1,44 @@
+---
+// Map component - Interactive map island (Phase 2)
+// Will be hydrated with client:load in Phase 2
+---
+
+<div class="map-container">
+  <div class="map-placeholder">
+    <p>Interactive map loading...</p>
+  </div>
+</div>
+
+<style>
+  .map-container {
+    height: 50vh;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .map-placeholder {
+    background: var(--light-bg, #f8fafc);
+    border: 2px dashed var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 0.5rem);
+    padding: var(--space-12, 3rem);
+    text-align: center;
+    color: var(--muted-text, #64748b);
+    font-size: var(--text-lg, 1.125rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .map-container {
+      height: 60vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .map-container {
+      height: 70vh;
+    }
+  }
+</style>

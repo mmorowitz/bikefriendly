@@ -1,0 +1,139 @@
+---
+// BusinessCard component - Individual business display component (Phase 2)
+export interface Props {
+  business?: {
+    id: string;
+    name: string;
+    address: string;
+    category: string;
+    amenities: string[];
+    rating?: number;
+  };
+  compact?: boolean;
+}
+
+const { business, compact = false } = Astro.props;
+---
+
+{business ? (
+  <div class={`business-card ${compact ? 'compact' : ''}`}>
+    <div class="business-card-header">
+      <h3 class="business-name">{business.name}</h3>
+      <span class="business-category">{business.category}</span>
+    </div>
+    <div class="business-card-body">
+      <p class="business-address">{business.address}</p>
+      {business.amenities && business.amenities.length > 0 && (
+        <div class="business-amenities">
+          {business.amenities.map(amenity => (
+            <span class="amenity-tag">{amenity}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+) : (
+  <div class="business-card placeholder">
+    <div class="skeleton skeleton-header"></div>
+    <div class="skeleton skeleton-text"></div>
+    <div class="skeleton skeleton-text"></div>
+  </div>
+)}
+
+<style>
+  .business-card {
+    background: var(--background-color, white);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: var(--space-4, 1rem);
+    margin-bottom: var(--space-4, 1rem);
+    transition: all var(--transition, 200ms ease);
+  }
+
+  .business-card:hover {
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.07));
+    transform: translateY(-1px);
+  }
+
+  .business-card.compact {
+    padding: var(--space-3, 0.75rem);
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .business-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .business-name {
+    margin: 0;
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: 600;
+    color: var(--text-color, #1e293b);
+  }
+
+  .business-category {
+    background: var(--primary-color, #1e40af);
+    color: white;
+    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+    border-radius: var(--radius, 0.375rem);
+    font-size: var(--text-xs, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .business-address {
+    color: var(--muted-text, #64748b);
+    margin: 0 0 var(--space-2, 0.5rem) 0;
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .business-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .amenity-tag {
+    background: var(--light-bg, #f8fafc);
+    color: var(--text-color, #1e293b);
+    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+    border-radius: var(--radius, 0.375rem);
+    font-size: var(--text-xs, 0.75rem);
+    border: 1px solid var(--border-color, #e2e8f0);
+  }
+
+  /* Placeholder styles */
+  .business-card.placeholder {
+    pointer-events: none;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, var(--light-bg, #f8fafc) 25%, rgba(255, 255, 255, 0.8) 50%, var(--light-bg, #f8fafc) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: var(--radius, 0.375rem);
+  }
+
+  .skeleton-header {
+    height: 1.5rem;
+    width: 60%;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .skeleton-text {
+    height: 1rem;
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .skeleton-text:last-child {
+    width: 40%;
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+</style>
